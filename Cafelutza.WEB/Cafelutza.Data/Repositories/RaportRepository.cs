@@ -9,10 +9,10 @@ public class RaportRepository : IRaportRepository
         _dbContext = dbContext;
     }
 
-    public void AddRaport(Raport raport)
+    public async Task AddRaport(Raport raport)
     {
-        _dbContext.Raports.Add(raport);
-        _dbContext.SaveChanges();
+       _dbContext.Raports.Add(raport);
+       await _dbContext.SaveChangesAsync();
     }
 
     public IEnumerable<Raport> GetAllRaports()
