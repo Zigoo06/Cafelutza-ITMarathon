@@ -1,0 +1,38 @@
+<div class="form">
+  <h1>Raportati aici problema dumneavoastra</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nume</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Locatia</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">Deseuri</mat-option>
+      <mat-option value="two">Obiecte periculoase</mat-option>
+      <mat-option value="three">Obiecte pierdute</mat-option>
+      <mat-option value="two">Altele</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Descriere problema</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <!-- <label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #imageInput type="file" />
+  </label> -->
+  <label class="custom-file-upload">
+    <input type="file" />
+    <i class="fa fa-cloud-upload"></i> Custom Upload
+  </label>
+  <hr />
+  <button mat-raised-button color="primary">Submit</button>
+</div>
