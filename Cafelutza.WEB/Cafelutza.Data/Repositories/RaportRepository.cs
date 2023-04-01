@@ -26,7 +26,7 @@ public class RaportRepository : IRaportRepository
         throw new NotImplementedException();
     }
 
-    public void RemoveRaport(Guid id)
+    public void RemoveRaport(int id)
     {
         throw new NotImplementedException();
     }
