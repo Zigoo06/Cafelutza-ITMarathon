@@ -1,17 +1,12 @@
 <div class="form">
   <h1>Raportati aici problema dumneavoastra</h1>
-  <form [formGroup]="form">
-    <mat-form-field appearance="fill">
-      <mat-label>Nume</mat-label>
-      <input matInput />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
+  <form mat-form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <mat-form-field formArrayName="Location" appearance="fill">
       <mat-label>Locatia</mat-label>
       <input matInput />
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field formArrayName="Category" appearance="fill">
       <mat-label>Select</mat-label>
       <mat-select>
         <mat-option value="one">Deseuri</mat-option>
@@ -20,7 +15,8 @@
         <mat-option value="two">Altele</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+
+    <mat-form-field formArrayName="Description" appearance="fill">
       <mat-label>Descriere problema</mat-label>
       <textarea matInput></textarea>
     </mat-form-field>
@@ -34,8 +30,6 @@
     />
     <hr />
     <img [src]="imgUrl" alt="" />
-    <button mat-raised-button color="primary" (click)="postForm()">
-      Post Raport
-    </button>
+    <button type="submit" color="primary">Post Raport</button>
   </form>
 </div>
