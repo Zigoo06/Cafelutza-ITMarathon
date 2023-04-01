@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafelutza.WEB", "Cafelutza.WEB\Cafelutza.WEB.csproj", "{C0069540-F09B-470C-B81B-954623E7055C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafelutza.Data", "Cafelutza.Data\Cafelutza.Data.csproj", "{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafelutza.Data", "Cafelutza.Data\Cafelutza.Data.csproj", "{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafelutza.Application", "Cafelutza.Application\Cafelutza.Application.csproj", "{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafelutza.Application", "Cafelutza.Application\Cafelutza.Application.csproj", "{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafelutza.WEB.Controllers
@@ -7,5 +7,12 @@ namespace Cafelutza.WEB.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        [Authorize]
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var a = HttpContext.User;
+            return Ok();
+        }
     }
 }
