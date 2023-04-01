@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.componen
     ReportsComponent,
     AnalyzePageComponent,
     AnalyzeRaportComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
