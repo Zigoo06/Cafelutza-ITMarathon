@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cafelutza.Data.Models;
+using Cafelutza.Data.Repositories;
 
-namespace Cafelutza.Application.Services
+namespace Cafelutza.Application.Services;
+public class RaportService : IRaportService
 {
-    internal interface RaportService
+    private readonly IRaportRepository _raportRepository;
+    public RaportService(IRaportRepository raportRepository)
     {
+        _raportRepository = raportRepository;
     }
+    public async Task AddRaport(Raport raport) => _raportRepository.AddRaport(raport);
 }

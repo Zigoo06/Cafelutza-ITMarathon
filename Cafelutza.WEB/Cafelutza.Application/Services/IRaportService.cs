@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cafelutza.Data.Models;
 
-namespace Cafelutza.Application.Services
+namespace Cafelutza.Application.Services;
+
+public interface IRaportService
 {
-    internal interface IRaportService
-    {
-    }
+    public Task AddRaport(Raport raport);
 }

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Cafelutza.Application.Services;
 
-namespace Cafelutza.Application.Services
+public interface IUserService
 {
-    internal interface IUserService
-    {
-    }
 }
