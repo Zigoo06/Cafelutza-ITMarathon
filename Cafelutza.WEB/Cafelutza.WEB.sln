@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafelutza.WEB", "Cafelutza.WEB\Cafelutza.WEB.csproj", "{C0069540-F09B-470C-B81B-954623E7055C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafelutza.WEB", "Cafelutza.WEB\Cafelutza.WEB.csproj", "{C0069540-F09B-470C-B81B-954623E7055C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafelutza.Data", "Cafelutza.Data\Cafelutza.Data.csproj", "{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafelutza.Application", "Cafelutza.Application\Cafelutza.Application.csproj", "{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C0069540-F09B-470C-B81B-954623E7055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0069540-F09B-470C-B81B-954623E7055C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0069540-F09B-470C-B81B-954623E7055C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A816E82-0AD4-4FC1-97FA-4947293A4DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236C4C32-5752-4E0C-B8D9-6C11E37D91BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
