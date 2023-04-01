@@ -20,6 +20,7 @@ import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     ReportsComponent,
     AnalyzePageComponent,
     AnalyzeRaportComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

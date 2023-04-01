@@ -1,41 +1,45 @@
-<div class="form">
-  <h1>Raportati aici problema dumneavoastra</h1>
-  <form [formGroup]="form">
-    <mat-form-field appearance="fill">
-      <mat-label>Nume</mat-label>
-      <input matInput />
-    </mat-form-field>
+<!-- <div class="bck"> -->
+<div class="box">
+  <div class="form">
+    <h1>Raportati aici problema dumneavoastra</h1>
+    <form [formGroup]="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Nume</mat-label>
+        <input matInput />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Locatia</mat-label>
-      <input matInput />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Locatia</mat-label>
+        <input matInput />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Select</mat-label>
-      <mat-select>
-        <mat-option value="one">Deseuri</mat-option>
-        <mat-option value="two">Obiecte periculoase</mat-option>
-        <mat-option value="three">Obiecte pierdute</mat-option>
-        <mat-option value="two">Altele</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Descriere problema</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">Deseuri</mat-option>
+          <mat-option value="two">Obiecte periculoase</mat-option>
+          <mat-option value="three">Obiecte pierdute</mat-option>
+          <mat-option value="two">Altele</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Descriere problema</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
 
-    <label class="custom-file-upload" for="file"> Upload Photo</label>
-    <input
-      type="file"
-      id="file"
-      accept="image/*"
-      (change)="onFileSelected($event)"
-    />
-    <hr />
-    <img [src]="imgUrl" alt="" />
-    <button mat-raised-button color="primary" (click)="postForm()">
-      Post Raport
-    </button>
-  </form>
+      <label class="custom-file-upload" for="file"> Upload Photo</label>
+      <input
+        type="file"
+        id="file"
+        accept="image/*"
+        (change)="onFileSelected($event)"
+      />
+      <hr />
+      <img [src]="imgUrl" alt="" />
+      <button mat-raised-button color="primary" (click)="postForm()">
+        Post Raport
+      </button>
+    </form>
+  </div>
 </div>
+<!-- </div> -->
