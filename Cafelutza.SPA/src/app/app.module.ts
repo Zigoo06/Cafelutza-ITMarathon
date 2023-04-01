@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RaportService } from './services/raport.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [RaportService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
