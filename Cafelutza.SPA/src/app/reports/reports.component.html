@@ -22,26 +22,18 @@
         <textarea matInput></textarea>
       </mat-form-field>
 
-      <label class="custom-file-upload" for="file"> Upload Photo</label>
-      <input
-        type="file"
-        id="file"
-        accept="image/*"
-        (change)="onFileSelected($event)"
-      />
-      <hr />
-      <img [src]="imgUrl" alt="" />
-      <div class="container">
-        <button type="submit" color="primary" class="btn" onclick="openPopup()">
-          Post Raport
-        </button>
-        <div class="popup" id="popup">
-          <img src="okey.jpg" />
-          <p>Your raport has been succesfully submitted!</p>
-          <h2>Thank You!</h2>
-          <button type="button" onclick="closePopup()">Ok</button>
-        </div>
-      </div>
-    </form>
-  </div>
+    <label class="custom-file-upload" for="file"> Upload Photo</label>
+    <input
+      type="file"
+      id="file"
+      accept="image/*"
+      (change)="onFileSelected($event)"
+    />
+    <hr />
+    <img [src]="imgUrl" alt="" />
+
+    <button type="submit" color="primary">Post Raport</button>
+  </form>
 </div>
+ </div>
+

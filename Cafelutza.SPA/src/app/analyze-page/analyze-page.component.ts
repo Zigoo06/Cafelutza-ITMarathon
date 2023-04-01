@@ -1,22 +1,46 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Raport } from '../models/raport';
+import { RaportService } from '../services/raport.service';
 
+// @Component({
+//   selector: 'app-analyze-page',
+//   templateUrl: './analyze-page.component.html',
+//   styleUrls: ['./analyze-page.component.scss'],
+// })
+// export class AnalyzePageComponent implements OnInit {
+//   selectedItem = '';
+
+//   listItems: Raport[] = [];
+//   constructor(private raportService: RaportService) {}
+
+//   ngOnInit(): void {
+//     this.getData();
+//   }
+//   getData() {
+//     this.raportService.getRaports().subscribe((response) => {
+//       this.listItems = response;
+//     });
+//     console.log(this.listItems);
+//   }
+// }
 @Component({
   selector: 'app-analyze-page',
   templateUrl: './analyze-page.component.html',
   styleUrls: ['./analyze-page.component.scss'],
 })
-export class AnalyzePageComponent {
+export class AnalyzePageComponent implements OnInit {
   selectedItem = '';
 
-  listItems = [
-    { id: 1, linkTitle: 'Home 1', Description: '/asdasd-a' },
-    { id: 2, linkTitle: 'Home 2', Description: '/asdasd-a' },
-    { id: 3, linkTitle: 'Home 3', Description: '/asdasd-a' },
-    { id: 4, linkTitle: 'Home 4', Description: 'asdasd' },
-    { id: 5, linkTitle: 'Home 5', Description: '/asdasd-a' },
-  ];
+  listItems: Raport[] = [];
+  constructor(private raportService: RaportService) {}
 
-  handleClick(selectedItem: { linkTitle: string }) {
-    console.log(selectedItem);
+  ngOnInit(): void {
+    this.getData();
+  }
+  getData() {
+    this.raportService.getRaports().subscribe((response) => {
+      this.listItems = response;
+      console.log(this.listItems);
+    });
   }
 }
