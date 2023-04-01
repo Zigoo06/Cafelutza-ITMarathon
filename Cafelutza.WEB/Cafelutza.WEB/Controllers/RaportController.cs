@@ -22,10 +22,11 @@ namespace Cafelutza.WEB.Controllers
             return Ok(raport);
         }
 
-        //[HttpGet]
-        //public IActionResult<Raport> GetAllRaports()
-        //{
-            
-        //}
+        [HttpGet]
+        public ActionResult<IEnumerable<Raport>> GetAllRaports()
+        {
+            var raports =_raportService.GetAllRaports();
+            return Ok(raports);
+        }
     }
 }
