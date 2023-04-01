@@ -16,9 +16,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, ReportsComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    ReportsComponent,
+    AnalyzePageComponent,
+    AnalyzeRaportComponent,
+    HomePageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,6 +44,7 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
