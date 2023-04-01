@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DatabaseContext>(x=> x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
 builder.Services.AddCors(policy =>
 {
     policy.AddPolicy("DefaultPolicy", options =>
@@ -37,9 +38,9 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
     dbContext.Database.Migrate();
 }
-app.UseCors("DefaultPolicy");
-app.UseHttpsRedirection();
 
+app.UseHttpsRedirection();
+app.UseCors("DefaultPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
