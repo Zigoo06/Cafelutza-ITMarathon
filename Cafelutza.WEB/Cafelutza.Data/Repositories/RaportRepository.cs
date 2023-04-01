@@ -1,11 +1,9 @@
 ﻿using Cafelutza.Data.Models;
-using Cafelutza.Data;
-
+using System.Linq;
 namespace Cafelutza.Data.Repositories;
 public class RaportRepository : IRaportRepository
 {
     private readonly DatabaseContext _dbContext;
-
     public RaportRepository(DatabaseContext dbContext)
     {
         _dbContext = dbContext;
@@ -13,5 +11,23 @@ public class RaportRepository : IRaportRepository
 
     public void AddRaport(Raport raport)
     {
+        _dbContext.Raports.Add(raport);
+        _dbContext.SaveChanges();
+    }
+
+    public IEnumerable<Raport> GetAllRaports()
+    {
+        var raports = _dbContext.Raports.AsEnumerable();
+        return raports;
+    }
+
+    public Raport GetRaport(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void RemoveRaport(Guid id)
+    {
+        throw new NotImplementedException();
     }
 }

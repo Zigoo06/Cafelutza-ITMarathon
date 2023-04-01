@@ -6,12 +6,14 @@ namespace Cafelutza.Data;
 public class DatabaseContext : DbContext
 {
 
+
+    public DbSet<User> Users { get; set; }
+    public DbSet<Raport> Raports { get; set;}
+
+
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
     }
-
-    DbSet<User> Users { get; set; }
-    DbSet<Raport> Raports { get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
