@@ -1,0 +1,12 @@
+<mat-card class="card-lista">
+  <mat-list role="list">
+    <mat-list-item
+      role="listitem"
+      *ngFor="let item of listItems"
+      (click)="handleClick(item)"
+      routerLink="{{ item.id }}"
+    >
+      {{ item.linkTitle }}</mat-list-item
+    >
+  </mat-list>
+</mat-card>
