@@ -22,7 +22,7 @@ namespace Cafelutza.WEB.Controllers
             return Ok(raport);
         }
 
-        [HttpGet]
+        [HttpGet("getall")]
         public ActionResult<IEnumerable<Raport>> GetAllRaports()
         {
             var raports =_raportService.GetAllRaports();
