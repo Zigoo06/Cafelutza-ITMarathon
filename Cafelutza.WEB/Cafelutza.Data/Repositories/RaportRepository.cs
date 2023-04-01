@@ -9,9 +9,19 @@ public class RaportRepository : IRaportRepository
         _dbContext = dbContext;
     }
 
-    public async Task AddRaport(Raport raport)
+    public async Task AddRaport(RaportRequest raport, User user)
     {
-       _dbContext.Raports.Add(raport);
+        var newRaport = new Raport
+        {
+            Category = raport.Category,
+            Description = raport.Description,
+            ImageURL = raport.ImageURL,
+            Location = raport.Location,
+            User = user
+        };
+        var response = _dbContext.Users.FirstOrDefault(c => c.Name == user.Name);
+        response.Raports.Add(newRaport);
+       _dbContext.Raports.Add(newRaport);
        await _dbContext.SaveChangesAsync();
     }
 

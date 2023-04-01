@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Cafelutza.Application.Services;
+using Cafelutza.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Cafelutza.WEB.Controllers
 {
@@ -7,12 +10,35 @@ namespace Cafelutza.WEB.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         [Authorize]
         [HttpGet]
         public IActionResult Index()
         {
-            var a = HttpContext.User;
-            return Ok();
+            var user = HttpContext.User;
+            var newUser = new User
+            {
+                    Id = user.Claims.FirstOrDefault(c=> c.Type == ClaimTypes.NameIdentifier).Value,
+                    Name = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value,
+                    Email = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value,
+                    Role= "usser"
+            };
+
+            try
+            {
+                _userService.AddUser(newUser);
+            }
+            catch(Exception)
+            {
+                return BadRequest("Can't add user");
+            }
+            return Ok(newUser);
         }
     }
 }
