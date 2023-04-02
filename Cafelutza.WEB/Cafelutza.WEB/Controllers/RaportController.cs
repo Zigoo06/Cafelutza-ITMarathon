@@ -1,9 +1,11 @@
 ﻿using Cafelutza.Application.Services;
 using Cafelutza.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafelutza.WEB.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RaportController : ControllerBase
@@ -30,6 +32,13 @@ namespace Cafelutza.WEB.Controllers
         {
             var raports =_raportService.GetAllRaports();
             return Ok(raports);
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<IEnumerable<Raport>> GetAllRaports(int id)
+        {
+            _raportService.RemoveRaport(id);
+            return Ok("Deleted");
         }
     }
 }

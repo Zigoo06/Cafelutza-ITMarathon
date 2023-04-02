@@ -11,5 +11,7 @@ public class RaportService : IRaportService
     }
     public async Task AddRaport(RaportRequest raport,User user) => await _raportRepository.AddRaport(raport,user);
 
-    public IEnumerable<Raport> GetAllRaports()=> _raportRepository.GetAllRaports();
+    public IEnumerable<Raport> GetAllRaports() => _raportRepository.GetAllRaports();
+
+    public Task RemoveRaport(int id) => _raportRepository.RemoveRaport(id);
 }
