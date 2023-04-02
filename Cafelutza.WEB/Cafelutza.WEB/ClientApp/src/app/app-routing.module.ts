@@ -4,11 +4,16 @@ import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
 import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReportsComponent } from './reports/reports.component';
+import { RoleGuard } from './guard/role.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'reports', component: ReportsComponent },
-  { path: 'analyze', component: AnalyzePageComponent },
+  {
+    path: 'analyze',
+    component: AnalyzePageComponent,
+    canActivate: [RoleGuard],
+  },
   { path: 'analyze/:id', component: AnalyzeRaportComponent },
 ];
 

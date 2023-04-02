@@ -1,4 +1,6 @@
-﻿namespace Cafelutza.Data.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Cafelutza.Data.Models;
 
 public class Raport
 {
@@ -7,4 +9,5 @@ public class Raport
     public string Category { get; set; }
     public string Location { get; set; }
     public string ImageURL { get; set; }
+    public User User { get; set; }
 }

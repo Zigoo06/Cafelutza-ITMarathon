@@ -9,16 +9,19 @@ namespace Cafelutza.WEB.Controllers
     public class RaportController : ControllerBase
     {
         private readonly IRaportService _raportService;
+        private readonly IUserService _userService;
 
-        public RaportController(IRaportService raportService)
+        public RaportController(IRaportService raportService,IUserService userService)
         {
             _raportService= raportService;
+            _userService= userService;
         }
 
         [HttpPost]
-        public ActionResult<Raport> AddRaport([FromBody] Raport raport)
+        public ActionResult<Raport> AddRaport([FromBody]RaportRequest raport)
         {
-            _raportService.AddRaport(raport);
+            var user = _userService.GetUser(HttpContext.User.Identity.Name);
+            _raportService.AddRaport(raport,user);
             return Ok(raport);
         }
 

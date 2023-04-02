@@ -34,7 +34,7 @@ export class ReportsComponent {
     };
   }
 
-  onFormSubmit() {
+  onFormSubmit(event: any) {
     this.raport.Category = this.form.value.Category
       ? this.form.value.Category
       : '';
