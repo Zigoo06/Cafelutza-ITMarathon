@@ -1,6 +1,5 @@
 <div class="box">
   <div class="form">
-    <p>Raportati aici problema dumneavoastra</p>
     <form mat-form [formGroup]="form" (ngSubmit)="onFormSubmit()">
       <mat-form-field formArrayName="Location" appearance="fill">
         <mat-label>Locatia</mat-label>
@@ -22,18 +21,17 @@
         <textarea matInput></textarea>
       </mat-form-field>
 
-    <label class="custom-file-upload" for="file"> Upload Photo</label>
-    <input
-      type="file"
-      id="file"
-      accept="image/*"
-      (change)="onFileSelected($event)"
-    />
-    <hr />
-    <img [src]="imgUrl" alt="" />
+      <label class="custom-file-upload" for="file"> Upload Photo</label>
+      <input
+        type="file"
+        id="file"
+        accept="image/*"
+        (change)="onFileSelected($event)"
+      />
+      <hr />
+      <img [src]="imgUrl" alt="" />
 
-    <button type="submit" color="primary">Post Raport</button>
-  </form>
+      <button type="submit" color="primary">Post Raport</button>
+    </form>
+  </div>
 </div>
- </div>
-
