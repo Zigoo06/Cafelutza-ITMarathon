@@ -1,24 +1,10 @@
-:host {
-  display: flex;
+.container {
   justify-content: center;
-}
-.card-lista {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  width: 60%;
-  justify-content: space-between;
-  .item {
-    display: grid;
-    grid-template-areas:
-      "categorie poza"
-      "descriere locatie";
-    margin-bottom: 20%;
-    min-height: 300px;
-    min-width: 100%;
-    img {
-      height: 100px;
-    }
+  .matListItemLine {
+    width: 60%;
   }
+}
+.item {
+  align-items: center;
 }
