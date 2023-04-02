@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Cafelutza.Data.Models;
+﻿namespace Cafelutza.Data.Models;
 
 public class Raport
 {

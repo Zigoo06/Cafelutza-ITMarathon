@@ -23,4 +23,8 @@ export class RaportService {
       })
     );
   }
+
+  removeRaport(id: number) {
+    this.http.delete(this.baseUrl + '/raport/' + id).subscribe();
+  }
 }

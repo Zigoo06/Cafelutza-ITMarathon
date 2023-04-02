@@ -17,7 +17,11 @@ export class AnalyzePageComponent implements OnInit {
   getData() {
     this.raportService.getRaports().subscribe((response) => {
       this.raports = response;
-      console.log(this.raports);
     });
+  }
+
+  removeRaport(id: number) {
+    this.raportService.removeRaport(id);
+    window.location.reload();
   }
 }

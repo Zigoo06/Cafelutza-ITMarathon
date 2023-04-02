@@ -46,7 +46,12 @@ export class ReportsComponent {
       : '';
     this.raport.imageURL = this.imgUrl;
 
-    console.log(this.raport);
     this.raportService.sendRaport(this.raport);
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.form.reset();
+    window.location.reload();
   }
 }
