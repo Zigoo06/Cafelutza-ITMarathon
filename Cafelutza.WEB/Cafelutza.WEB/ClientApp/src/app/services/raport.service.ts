@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Raport } from '../models/raport';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable()
 export class RaportService {
@@ -15,6 +15,12 @@ export class RaportService {
   }
 
   getRaports(): Observable<Raport[]> {
-    return this.http.get<Raport[]>(this.baseUrl + '/Raport/getall');
+    return this.http.get<Raport[]>(this.baseUrl + '/Raport/getall').pipe(
+      map((res) => {
+        const raports: Raport[] = [];
+        res.forEach((x) => raports.push(x));
+        return raports;
+      })
+    );
   }
 }

@@ -1,7 +1,7 @@
 export class Raport {
-  Id: number = 0;
-  Description: string = '';
-  Category: string = '';
-  Location: string = '';
-  ImageURL: string = '';
+  id: number = 0;
+  description: string = '';
+  category: string = '';
+  location: string = '';
+  imageURL: string = '';
 }

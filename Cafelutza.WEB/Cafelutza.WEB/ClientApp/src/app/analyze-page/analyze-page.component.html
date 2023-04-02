@@ -1,11 +1,24 @@
 <mat-card class="card-lista">
   <mat-list role="list">
-    <mat-list-item
-      role="listitem"
-      *ngFor="let item of listItems"
-      routerLink="{{ item.Id }}"
-    >
-      {{ item.Category }}</mat-list-item
-    >
+    <div *ngIf="raports != []">
+      <mat-list-item
+        *ngFor="let item of raports"
+        routerLink="{{ item.id }}"
+        class="item"
+      >
+        <div>
+          {{ item.description }}
+        </div>
+        <div>
+          {{ item.category }}
+        </div>
+        <div>
+          {{ item.location }}
+        </div>
+        <div>
+          <img [src]="item.imageURL" alt="" />
+        </div>
+      </mat-list-item>
+    </div>
   </mat-list>
 </mat-card>
