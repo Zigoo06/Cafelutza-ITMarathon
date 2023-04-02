@@ -1,5 +1,5 @@
 ﻿using Cafelutza.Data.Models;
-using System.Linq;
+
 namespace Cafelutza.Data.Repositories;
 public class RaportRepository : IRaportRepository
 {
@@ -9,7 +9,7 @@ public class RaportRepository : IRaportRepository
         _dbContext = dbContext;
     }
 
-    public async Task AddRaport(RaportRequest raport, User user)
+    public Task AddRaport(RaportRequest raport, User user)
     {
         var newRaport = new Raport
         {
@@ -20,7 +20,8 @@ public class RaportRepository : IRaportRepository
             User = user
         };
        _dbContext.Raports.Add(newRaport);
-       await _dbContext.SaveChangesAsync();
+       _dbContext.SaveChanges();
+        return Task.CompletedTask;
     }
 
     public IEnumerable<Raport> GetAllRaports()
@@ -32,10 +33,14 @@ public class RaportRepository : IRaportRepository
     public Raport GetRaport(string id)
     {
         throw new NotImplementedException();
+
     }
 
-    public void RemoveRaport(int id)
+    public Task RemoveRaport(int id)
     {
-        throw new NotImplementedException();
+        var raport = _dbContext.Raports.FirstOrDefault(x => x.Id == id);
+        _dbContext.Raports.Remove(raport);
+        _dbContext.SaveChanges();
+        return Task.CompletedTask;
     }
 }
