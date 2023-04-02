@@ -35,16 +35,16 @@ export class ReportsComponent {
   }
 
   onFormSubmit() {
-    this.raport.Category = this.form.value.Category
+    this.raport.category = this.form.value.Category
       ? this.form.value.Category
       : '';
-    this.raport.Description = this.form.value.Description
+    this.raport.description = this.form.value.Description
       ? this.form.value.Description
       : '';
-    this.raport.Location = this.form.value.Location
+    this.raport.location = this.form.value.Location
       ? this.form.value.Location
       : '';
-    this.raport.ImageURL = this.imgUrl;
+    this.raport.imageURL = this.imgUrl;
 
     console.log(this.raport);
     this.raportService.sendRaport(this.raport);

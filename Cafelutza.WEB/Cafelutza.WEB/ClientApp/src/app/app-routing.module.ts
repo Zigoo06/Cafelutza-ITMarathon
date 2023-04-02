@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'analyze',
     component: AnalyzePageComponent,
-    canActivate: [RoleGuard],
+    // canActivate: [RoleGuard],
   },
   { path: 'analyze/:id', component: AnalyzeRaportComponent },
 ];
