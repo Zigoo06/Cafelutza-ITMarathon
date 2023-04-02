@@ -9,7 +9,7 @@ public class RaportService : IRaportService
     {
         _raportRepository = raportRepository;
     }
-    public async Task AddRaport(Raport raport) => await _raportRepository.AddRaport(raport);
+    public async Task AddRaport(RaportRequest raport,User user) => await _raportRepository.AddRaport(raport,user);
 
     public IEnumerable<Raport> GetAllRaports()=> _raportRepository.GetAllRaports();
 }

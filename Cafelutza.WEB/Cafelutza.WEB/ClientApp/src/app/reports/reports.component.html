@@ -1,14 +1,14 @@
 <div class="box">
   <div class="form">
     <form mat-form [formGroup]="form" (ngSubmit)="onFormSubmit()">
-      <mat-form-field formArrayName="Location" appearance="fill">
+      <mat-form-field appearance="fill">
         <mat-label>Locatia</mat-label>
-        <input matInput />
+        <input matInput formControlName="Location" />
       </mat-form-field>
 
-      <mat-form-field formArrayName="Category" appearance="fill">
+      <mat-form-field appearance="fill">
         <mat-label>Select</mat-label>
-        <mat-select>
+        <mat-select formControlName="Category">
           <mat-option value="one">Deseuri</mat-option>
           <mat-option value="two">Obiecte periculoase</mat-option>
           <mat-option value="three">Obiecte pierdute</mat-option>
@@ -16,9 +16,9 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field formArrayName="Description" appearance="fill">
+      <mat-form-field appearance="fill">
         <mat-label>Descriere problema</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput formControlName="Description"></textarea>
       </mat-form-field>
 
       <label class="custom-file-upload" for="file"> Upload Photo</label>
@@ -28,7 +28,6 @@
         accept="image/*"
         (change)="onFileSelected($event)"
       />
-      <hr />
       <img [src]="imgUrl" alt="" />
 
       <button type="submit" color="primary">Post Raport</button>

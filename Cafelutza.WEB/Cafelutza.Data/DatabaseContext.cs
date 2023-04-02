@@ -18,11 +18,12 @@ public class DatabaseContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>()
-            .HasIndex(u => u.Id)
-            .IsUnique();
+            .HasMany(c => c.Raports)
+            .WithOne(c => c.User);
 
         modelBuilder.Entity<Raport>()
-            .HasIndex(u => u.Id)
-            .IsUnique();
+            .HasOne(c => c.User)
+            .WithMany(c=> c.Raports)
+            .IsRequired();
     }
 }

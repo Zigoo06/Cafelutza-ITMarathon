@@ -23,12 +23,10 @@ builder.Services.AddAuthentication(GoogleDefaults.AuthenticationScheme).
     AddGoogle(options =>
 {
     options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.CallbackPath = "/sign-in";
+    options.CallbackPath = "/api/sign-in";
     options.ClientId = builder.Configuration["Google:ClientId"];
     options.ClientSecret = builder.Configuration["Google:ClientSecret"];
     options.ClaimsIssuer = "Google";
-    //options.Scope.Add("userinfo.email");
-    //options.Scope.Add("userinfo.profile");
 });
 builder.Services.AddAuthorization();
 
