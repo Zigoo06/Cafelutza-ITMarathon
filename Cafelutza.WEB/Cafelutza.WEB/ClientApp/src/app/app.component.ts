@@ -11,7 +11,5 @@ export class AppComponent implements OnInit {
   title = 'Cafelutza.SPA';
 
   constructor(private http: HttpClient) {}
-  ngOnInit(): void {
-    this.http.get(environment.apiUrl + '/user').subscribe();
-  }
+  ngOnInit(): void {}
 }

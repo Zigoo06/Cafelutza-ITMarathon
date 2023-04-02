@@ -20,4 +20,9 @@ public class UserService : IUserService
     {
        return _userRepository.GetUser(name);
     }
+
+    public string GetUserRole(string userName)
+    {
+        return _userRepository.GetUserRole(userName);
+    }
 }

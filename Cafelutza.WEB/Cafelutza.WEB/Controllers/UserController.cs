@@ -18,7 +18,7 @@ namespace Cafelutza.WEB.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet]   
         public IActionResult Index()
         {
             var user = HttpContext.User;
@@ -27,7 +27,7 @@ namespace Cafelutza.WEB.Controllers
                     Id = user.Claims.FirstOrDefault(c=> c.Type == ClaimTypes.NameIdentifier).Value,
                     Name = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value,
                     Email = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value,
-                    Role= "usser"
+                    Role= "user"
             };
 
             try
@@ -38,7 +38,18 @@ namespace Cafelutza.WEB.Controllers
             {
                 return BadRequest("Can't add user");
             }
-            return Ok(newUser);
+            return Redirect("~/");
+        }
+
+        [Authorize]
+        [HttpGet("isOperator")]
+        public ActionResult<bool> IsOperator()
+        {
+            var userName = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
+
+            var role = _userService.GetUserRole(userName);
+
+            return Ok(role == "operator");
         }
     }
 }

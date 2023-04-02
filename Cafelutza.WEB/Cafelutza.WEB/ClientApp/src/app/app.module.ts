@@ -22,6 +22,8 @@ import { AnalyzeRaportComponent } from './analyze-raport/analyze-raport.componen
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RaportService } from './services/raport.service';
+import { UserService } from './services/user.service';
+import { RoleGuard } from './guard/role.guard';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { RaportService } from './services/raport.service';
     MatCardModule,
     HttpClientModule,
   ],
-  providers: [RaportService],
+  providers: [RaportService, UserService, RoleGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
