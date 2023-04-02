@@ -25,6 +25,9 @@ p {
   font-weight: 400;
   line-height: 25px;
 }
+.reports-containers {
+  width: 60%;
+}
 
 img {
   width: 150px;
@@ -32,6 +35,7 @@ img {
   //margin-top: -40px;
   border-radius: 50%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 60px;
 }
 h1 {
   text-align: center;
@@ -46,8 +50,8 @@ p {
 
 button {
   width: 100%;
-  margin-top: 50px;
-  padding: 10px 0;
+
+  padding: 10px;
   background: #6fd649;
   color: #fff;
   border: 0;
@@ -84,6 +88,7 @@ input[type="file"] {
 }
 
 .custom-file-upload {
+  width: 250px;
   color: purple;
   margin: 8px;
   font-weight: 700;
@@ -91,5 +96,12 @@ input[type="file"] {
   border: 5px solid purple;
   display: inline-block;
   padding: 6px 12px;
+  text-align: center;
   cursor: pointer;
+}
+
+.buton1:focus {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 4px #5a01a7;
 }

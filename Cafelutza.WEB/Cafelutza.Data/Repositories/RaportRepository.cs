@@ -19,8 +19,7 @@ public class RaportRepository : IRaportRepository
             Location = raport.Location,
             User = user
         };
-        var response = _dbContext.Users.FirstOrDefault(c => c.Name == user.Name);
-        response.Raports.Add(newRaport);
+        
        _dbContext.Raports.Add(newRaport);
        await _dbContext.SaveChangesAsync();
     }
