@@ -19,7 +19,6 @@ public class RaportRepository : IRaportRepository
             Location = raport.Location,
             User = user
         };
-        
        _dbContext.Raports.Add(newRaport);
        await _dbContext.SaveChangesAsync();
     }
